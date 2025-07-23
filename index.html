@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mistério</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+    body {
+      background-color: black;
+      color: red;
+      font-family: 'Lobster', cursive;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    input {
+      margin-top: 20px;
+      padding: 10px;
+      background: #222;
+      border: 1px solid red;
+      color: red;
+      font-family: 'Lobster', cursive;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: red;
+      color: black;
+      border: none;
+      font-family: 'Lobster', cursive;
+      cursor: pointer;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      margin-top: 20px;
+      border: 3px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script>
+    const container = document.getElementById('container');
+
+    function primeiraTela() {
+      container.innerHTML = `
+        <h1>Digite a senha</h1>
+        <input type="password" id="senha" placeholder="Senha">
+        <br>
+        <button onclick="verificarSenhaInicial()">Acessar</button>
+      `;
+    }
+
+    function verificarSenhaInicial() {
+      const senha = document.getElementById('senha').value.toLowerCase();
+      if (senha === 'plena') {
+        segundaTela();
+      } else {
+        alert('Senha incorreta.');
+      }
+    }
+
+    function segundaTela() {
+      container.innerHTML = `
+        <h1>Você encontrou um novo segredo...</h1>
+        <img src="carta.png" alt="Carta Secreta">
+        <input type="text" id="senhaFinal" placeholder="Digite a segunda senha">
+        <br>
+        <button onclick="verificarSenhaFinal()">Continuar</button>
+      `;
+    }
+
+    function verificarSenhaFinal() {
+      const senha = document.getElementById('senhaFinal').value.toLowerCase();
+      if (senha === 'alunos') {
+        terceiraTela();
+      } else {
+        alert('Senha incorreta.');
+      }
+    }
+
+    function terceiraTela() {
+      container.innerHTML = `<h1>Elas estão se preparando para a batalha final</h1>`;
+    }
+
+    primeiraTela();
+  </script>
+</body>
+</html>
