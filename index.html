@@ -71,7 +71,7 @@
           Seu navegador não suporta áudio HTML5.
         </audio>
         <br><br>
-        <img src="piano.png" alt="Pianin" style="max-width: 90%; height: auto; border: 2px solid red;">
+        <img src="piano.png" alt="Imagem Misteriosa" style="max-width: 90%; height: auto; border: 2px solid red;">
         <br><br>
         <input type="text" id="senhaFinal" placeholder="Digite a segunda senha">
         <br>
@@ -81,7 +81,7 @@
 
     function verificarSenhaFinal() {
       const senha = document.getElementById('senhaFinal').value;
-      if (senha.toUpperCase() === 'CABECA') {
+      if (senha.toUpperCase() === 'CABEÇA') {
         terceiraTela();
       } else {
         alert('Senha incorreta.');
@@ -89,7 +89,7 @@
     }
 
     function terceiraTela() {
-      container.innerHTML = `<h1>Frase do dia: a pergunta que não quer calar:</h1>`;
+      container.innerHTML = `<h1>a pergunta que não quer calar:</h1>`;
     }
 
     primeiraTela();
