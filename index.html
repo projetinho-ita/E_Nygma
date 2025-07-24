@@ -81,7 +81,7 @@
 
     function verificarSenhaFinal() {
       const senha = document.getElementById('senhaFinal').value;
-      if (senha.toUpperCase() === 'CABEÇA') {
+      if (senha.toUpperCase() === 'CABECA') {
         terceiraTela();
       } else {
         alert('Senha incorreta.');
@@ -89,7 +89,7 @@
     }
 
     function terceiraTela() {
-      container.innerHTML = `<h1>a pergunta que não quer calar:</h1>`;
+      container.innerHTML = `<h1>Frase do dia: a pergunta que não quer calar:</h1>`;
     }
 
     primeiraTela();
