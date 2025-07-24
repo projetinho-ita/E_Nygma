@@ -3,21 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mistério</title>
+  <title>Enigma</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
     body {
       background-color: black;
       color: red;
-      font-family: 'Lobster', cursive;
+      font-family: 'Times New Roman', serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
-      padding: 20px;
       text-align: center;
     }
     input {
@@ -26,7 +23,7 @@
       background: #222;
       border: 1px solid red;
       color: red;
-      font-family: 'Lobster', cursive;
+      font-family: 'Times New Roman', serif;
     }
     button {
       margin-top: 10px;
@@ -34,14 +31,11 @@
       background: red;
       color: black;
       border: none;
-      font-family: 'Lobster', cursive;
+      font-family: 'Times New Roman', serif;
       cursor: pointer;
     }
-    img {
-      max-width: 90%;
-      height: auto;
+    audio {
       margin-top: 20px;
-      border: 3px solid red;
     }
   </style>
 </head>
@@ -61,8 +55,8 @@
     }
 
     function verificarSenhaInicial() {
-      const senha = document.getElementById('senha').value.toLowerCase();
-      if (senha === 'plena') {
+      const senha = document.getElementById('senha').value;
+      if (senha.toLowerCase() === 'dogs') {
         segundaTela();
       } else {
         alert('Senha incorreta.');
@@ -71,8 +65,12 @@
 
     function segundaTela() {
       container.innerHTML = `
-        <h1>Você encontrou um novo segredo...</h1>
-        <img src="carta.png" alt="Carta Secreta">
+        <h1>Você avançou para o próximo estágio...</h1>
+        <audio controls autoplay loop>
+          <source src="musica.mp3" type="audio/mpeg">
+          Seu navegador não suporta áudio HTML5.
+        </audio>
+        <br><br>
         <input type="text" id="senhaFinal" placeholder="Digite a segunda senha">
         <br>
         <button onclick="verificarSenhaFinal()">Continuar</button>
@@ -80,8 +78,8 @@
     }
 
     function verificarSenhaFinal() {
-      const senha = document.getElementById('senhaFinal').value.toLowerCase();
-      if (senha === 'alunos') {
+      const senha = document.getElementById('senhaFinal').value;
+      if (senha.toUpperCase() === 'CEGA') {
         terceiraTela();
       } else {
         alert('Senha incorreta.');
@@ -89,7 +87,7 @@
     }
 
     function terceiraTela() {
-      container.innerHTML = `<h1>Frase do dia: Elas estão se preparando para a batalha final</h1>`;
+      container.innerHTML = `<h1>a pergunta que não quer calar:</h1>`;
     }
 
     primeiraTela();
