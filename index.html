@@ -7,16 +7,21 @@
     body {
       background-color: black;
       color: white;
-      font-family: 'Courier New', monospace;
-      text-align: center;
       margin: 0;
       padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
     img {
-      margin-top: 50px;
-      width: 400px;
-      border: 4px solid white;
+      width: 70%;
+      max-width: 1000px;
+      border: 8px solid #8B0000; /* vermelho sangue */
+      box-shadow: 0 0 30px #8B0000;
     }
+
     audio {
       display: none;
     }
@@ -29,5 +34,4 @@
     Seu navegador não suporta o elemento de áudio.
   </audio>
 </body>
-<!-- Dica: o nome do arquivo de áudio contém a instrução. Tente inverter ou decifrar. -->
 </html>
