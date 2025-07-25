@@ -1,98 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enigma</title>
+  <title>Último Enigma</title>
   <style>
     body {
       background-color: black;
-      color: red;
-      font-family: 'Times New Roman', serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+      color: white;
+      font-family: 'Courier New', monospace;
       text-align: center;
+      margin: 0;
+      padding: 0;
     }
-    input {
-      margin-top: 20px;
-      padding: 10px;
-      background: #222;
-      border: 1px solid red;
-      color: red;
-      font-family: 'Times New Roman', serif;
-    }
-    button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: red;
-      color: black;
-      border: none;
-      font-family: 'Times New Roman', serif;
-      cursor: pointer;
+    img {
+      margin-top: 50px;
+      width: 400px;
+      border: 4px solid white;
     }
     audio {
-      margin-top: 20px;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div id="container"></div>
-
-  <script>
-    const container = document.getElementById('container');
-
-    function primeiraTela() {
-      container.innerHTML = `
-        <h1>Digite a senha</h1>
-        <input type="password" id="senha" placeholder="Senha">
-        <br>
-        <button onclick="verificarSenhaInicial()">Acessar</button>
-      `;
-    }
-
-    function verificarSenhaInicial() {
-      const senha = document.getElementById('senha').value;
-      if (senha.toLowerCase() === 'dogs') {
-        segundaTela();
-      } else {
-        alert('Senha incorreta.');
-      }
-    }
-
-    function segundaTela() {
-      container.innerHTML = `
-        <h1>Você avançou para o próximo estágio...</h1>
-        <audio controls autoplay loop>
-          <source src="mistereous notes.mp3" type="audio/mpeg">
-          Seu navegador não suporta áudio HTML5.
-        </audio>
-        <br><br>
-        <img src="piano.png" alt="Imagem Misteriosa" style="max-width: 90%; height: auto; border: 2px solid red;">
-        <br><br>
-        <input type="text" id="senhaFinal" placeholder="Digite a segunda senha">
-        <br>
-        <button onclick="verificarSenhaFinal()">Continuar</button>
-      `;
-    }
-
-    function verificarSenhaFinal() {
-      const senha = document.getElementById('senhaFinal').value;
-      if (senha.toUpperCase() === 'CABEÇA') {
-        terceiraTela();
-      } else {
-        alert('Senha incorreta.');
-      }
-    }
-
-    function terceiraTela() {
-      container.innerHTML = `<h1>Frase do dia: a pergunta que não quer calar:</h1>`;
-    }
-
-    primeiraTela();
-  </script>
+  <img src="sede.png" alt="Enigma Final">
+  <audio autoplay loop>
+    <source src="odieua adan otiepsus.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
 </body>
+<!-- Dica: o nome do arquivo de áudio contém a instrução. Tente inverter ou decifrar. -->
 </html>
