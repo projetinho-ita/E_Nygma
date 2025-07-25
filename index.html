@@ -1,78 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Enigma Final</title>
+  <meta charset="UTF-8">
+  <title>Desafio final</title>
   <style>
     body {
       background-color: black;
-      color: white;
-      font-family: 'Courier New', monospace;
-      text-align: center;
-      padding-top: 50px;
-    }
-    #senhaSection, #conteudoFinal {
-      display: none;
-    }
-    .imagem {
-      margin: 40px auto;
-      display: block;
-      max-width: 90%;
-      border: 10px solid darkred;
-      box-shadow: 0 0 30px red;
-    }
-    #frase {
-      font-size: 24px;
-      margin-top: 40px;
       color: red;
+      font-family: "Times New Roman", serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
     input[type="password"] {
       padding: 10px;
       font-size: 18px;
-      border-radius: 5px;
-      border: none;
-      margin-top: 10px;
+      border: 2px solid red;
+      background: black;
+      color: red;
     }
     button {
+      margin-top: 10px;
       padding: 10px 20px;
-      font-size: 18px;
-      margin-top: 15px;
-      background-color: red;
-      border: none;
-      color: white;
+      background: red;
+      color: black;
+      font-weight: bold;
       cursor: pointer;
-      border-radius: 5px;
+      border: none;
+    }
+    img {
+      border: 6px solid darkred;
+      max-width: 90%;
+      max-height: 90vh;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <div id="senhaSection">
-    <h2>Digite a senha para acessar:</h2>
-    <input type="password" id="senha" placeholder="Senha" />
-    <br />
-    <button onclick="verificarSenha()">Entrar</button>
-  </div>
 
-  <div id="conteudoFinal">
-    <audio id="bg-audio" loop>
-      <source src="mistereous notes.mp3" type="audio/mpeg">
-      Seu navegador não suporta o elemento de áudio.
-    </audio>
-    <img src="sede.png" class="imagem" alt="Sede" />
-  </div>
+<div id="pagina1">
+  <h1>Insira a senha para prosseguir</h1>
+  <input type="password" id="senha1">
+  <button onclick="verificarSenha()">Entrar</button>
+</div>
 
-  <script>
-    document.getElementById('senhaSection').style.display = 'block';
+<div id="pagina2" style="display: none; flex-direction: column; align-items: center;">
+  <!-- Arquivo altamente perigoso! NUNCA JAMAIS baixe ele -->
+  <audio id="musica" loop>
+    <source src="oidua adan otiepsus.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+  <img src="sede.png" alt="Imagem" />
+</div>
 
-    function verificarSenha() {
-      const senha = document.getElementById('senha').value;
-      if (senha.toLowerCase() === "feriado") {
-        document.getElementById('senhaSection').style.display = 'none';
-        document.getElementById('conteudoFinal').style.display = 'block';
-      } else {
-        alert("Senha incorreta!");
-      }
+<script>
+  function verificarSenha() {
+    const senha = document.getElementById("senha1").value;
+    if (senha.trim().toLowerCase() === "feriado") {
+      document.getElementById("pagina1").style.display = "none";
+      document.getElementById("pagina2").style.display = "flex";
+    } else {
+      alert("Senha incorreta!");
     }
-  </script>
+  }
+
+  window.addEventListener('click', function () {
+    const audio = document.getElementById('musica');
+    if (audio.paused) {
+      audio.play().catch(e => console.warn('Erro ao tentar tocar o áudio:', e));
+    }
+  });
+</script>
+
 </body>
 </html>
