@@ -13,12 +13,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
 
     img {
       width: 70%;
       max-width: 1000px;
-      border: 8px solid #8B0000; /* vermelho sangue */
+      border: 8px solid #8B0000;
       box-shadow: 0 0 30px #8B0000;
     }
 
@@ -29,9 +30,18 @@
 </head>
 <body>
   <img src="sede.png" alt="Enigma Final">
-  <audio autoplay loop>
+  <audio id="bg-audio" loop>
     <source src="oidua adan otiepsus.mp3" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
   </audio>
+
+  <script>
+    window.addEventListener('click', () => {
+      const audio = document.getElementById('bg-audio');
+      if (audio.paused) {
+        audio.play().catch(e => console.log("Autoplay bloqueado:", e));
+      }
+    });
+  </script>
 </body>
 </html>
